@@ -158,12 +158,12 @@ sortedArr::~sortedArr(){
         delete []arr;
 }
 
-sortedArr& sortedArr::operator=(const sortedArr& a){
+const sortedArr& sortedArr::operator=(const sortedArr& a){
     //std::cout << "Running the = assignment operator copy\n";
     if(&a == this)  //resolving self-assignment
         return *this;
 
-    if(size == a.size)
+    if(size != a.size)
     {
         size = a.size;
         delete[] arr;
@@ -184,7 +184,7 @@ sortedArr& sortedArr::operator=(const sortedArr& a){
     return *this;
 }
 
-sortedArr& sortedArr::operator=(sortedArr&& a){
+const sortedArr& sortedArr::operator=(sortedArr&& a){
     //std::cout << "Running the = move assignment operator\n";
     
     size = a.size;

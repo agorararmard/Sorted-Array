@@ -40,8 +40,8 @@ class sortedArr{
 
         char* help(int error_code) const;   //for getting the meaning of an error code thrown by exceptions
 
-        sortedArr& operator=(const sortedArr& a);   //assignment operator
-        sortedArr& operator=(sortedArr&& a);        //move assignment operator
+        const sortedArr& operator=(const sortedArr& a);   //assignment operator
+        const sortedArr& operator=(sortedArr&& a);        //move assignment operator
         
         //Difference between following funcs is for sorting purposes
         inline unsigned int& operator[](int index);     //returning a reference to the element at index in a non const obj
